@@ -72,3 +72,5 @@ let NERDTreeWinPos = "left"
 nmap <F9> :NERDTreeToggle<CR>
 "vi start 시 곧바로 nerd tree 시작 
 "autocmd vimenter * NERDTree
+
+" This is commit test
