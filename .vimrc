@@ -13,6 +13,22 @@ set nu
 set ai
 set ts=4
 set bg=dark
+set rnu
+
+set history=100         " keep 100 lines of history
+set ruler               " show the cursor position
+syntax on               " syntax highlighting
+set hlsearch            " highlight the last searched term
+filetype plugin on      " use the file type plugins
+:highlight Normal ctermfg=grey ctermbg=black
+
+" When editing a file, always jump to the last cursor position
+autocmd BufReadPost *
+\ if ! exists("g:leave_my_cursor_position_alone") |
+\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+\ exe "normal g'\"" |
+\ endif |
+\ endif
 
 "창 크기 조정
 "nnoremap <S-Left>   <C-W><<CR> 
@@ -25,11 +41,11 @@ set bg=dark
 "nnoremap <s-l> <C-W>>
 
 " ctags database path 설정 
-set tags=/home/dplee/work/tags  " ctags DB
+set tags=/Users/dplee/work/tags  " ctags DB
 
 " cscope database path 설정 
-cs add /home/dplee/work/cscope.out /home/dplee/work
-cs add /home/dplee/work/3rd_iter_trunk/cscope.out /home/dplee/work/3rd_iter_trunk
+cs add /Users/dplee/work/cscope.out /Users/dplee/work
+cs add /Users/dplee/work/3rd_iter_trunk/cscope.out /Users/dplee/work/3rd_iter_trunk
 set csprg=/usr/bin/cscope     " cscope 위치 
 set csto=0                    " cscope DB search first
 set cst                       " cscope DB tags DB search
@@ -73,4 +89,6 @@ nmap <F9> :NERDTreeToggle<CR>
 "vi start 시 곧바로 nerd tree 시작 
 "autocmd vimenter * NERDTree
 
-" This is commit test
+" armasm 설정 
+let asmsyntax='armasm' 
+let filetype_inc='armasm'
