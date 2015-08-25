@@ -20,7 +20,8 @@ set ruler               " show the cursor position
 syntax on               " syntax highlighting
 set hlsearch            " highlight the last searched term
 filetype plugin on      " use the file type plugins
-:highlight Normal ctermfg=grey ctermbg=black
+:highlight Normal ctermfg=white ctermbg=black
+:hi Visual term=reverse ctermbg=32  " highlight selected region
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
